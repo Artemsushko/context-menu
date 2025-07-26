@@ -6,8 +6,8 @@ import './styles.css'
 
 
 
-import { RandomColorBackgroundModule } from './modules/background.module'
+import { BackgroundModule } from './modules/background.module'
 
-const backgroundModule = new RandomColorBackgroundModule()
+const backgroundModule = new BackgroundModule()
 
 menu.add(backgroundModule)

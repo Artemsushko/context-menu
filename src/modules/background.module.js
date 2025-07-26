@@ -1,6 +1,6 @@
 import {Module} from '../core/module'
 
-export class RandomColorBackgroundModule extends Module {
+export class BackgroundModule extends Module {
     constructor() {
         super('random bg', 'Поменять цвет')
     }
