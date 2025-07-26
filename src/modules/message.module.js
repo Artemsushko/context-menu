@@ -16,10 +16,6 @@ export class CustomMessage extends Module {
     return this.newLetters
   }
 
-  toHTML() {
-    return `<li data-type="${this.type}" class="menu-item">${this.text}</li>`
-  }
-
   renderMessage() {
     this.textContainer = document.createElement('div')
     this.textContainer.className = 'randomTextContainer'
