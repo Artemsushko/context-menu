@@ -10,11 +10,7 @@ export class RandomSound extends Module {
     super('random-sound', 'Рандомный звук')
     this.soundsFile = [applepay, tada, icq, done]
   }
-
-  toHTML() {
-    return `<li data-type="${this.type}" class="menu-item">${this.text}</li>`
-  }
-
+  
   #randomSound(fileArrey) {
     return fileArrey[random(0, fileArrey.length - 1)]
   }
