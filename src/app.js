@@ -1,7 +1,9 @@
 import './styles.css'
 import { ContextMenu } from './menu'
-import { CustomMessage } from './modules/message.module'
+
+import { RandomSound } from './modules/randomSound.module'
 
 const contextMenu = new ContextMenu('#menu')
-const message = new CustomMessage()
-contextMenu.add(message)
+
+const randomSound = new RandomSound()
+contextMenu.add(randomSound)

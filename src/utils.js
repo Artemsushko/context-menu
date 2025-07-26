@@ -11,3 +11,7 @@ export function randomMessage() {
   }
   return newAbc
 }
+
+export function randomSound(fileArrey) {
+  return fileArrey[random(0, fileArrey.length - 1)]
+}
