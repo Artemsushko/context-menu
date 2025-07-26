@@ -4,4 +4,4 @@ import { RandomFigureModule } from './modules/shape.module'
 
 const figureModule = new RandomFigureModule()
 
-menu.add(figureModule)
+contextMenu.add(figureModule)
