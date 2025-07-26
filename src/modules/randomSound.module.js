@@ -1,5 +1,5 @@
 import { Module } from '../core/module'
-import { randomSound } from '../utils'
+import { random } from '../utils'
 import applepay from '../../assets/sounds/applepay.mp3'
 import tada from '../../assets/sounds/quottadamquot-sound.mp3'
 import icq from '../../assets/sounds/single-sound-message-icq-ooh.mp3'
@@ -12,11 +12,15 @@ export class RandomSound extends Module {
   }
 
   toHTML() {
-    return `<li data-type="${this.type}" style="color: white;cursor: pointer;">${this.text}</li>`
+    return `<li data-type="${this.type}" class="menu-item">${this.text}</li>`
+  }
+
+  #randomSound(fileArrey) {
+    return fileArrey[random(0, fileArrey.length - 1)]
   }
 
   trigger() {
-    const audio = new Audio(randomSound(this.soundsFile))
+    const audio = new Audio(this.#randomSound(this.soundsFile))
     return audio.play()
   }
 }
