@@ -16,7 +16,11 @@ export class RandomSound extends Module {
   }
 
   trigger() {
-    const audio = new Audio(this.#randomSound(this.soundsFile))
-    return audio.play()
+    try {
+      const audio = new Audio(this.#randomSound(this.soundsFile))
+      audio.play()
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
