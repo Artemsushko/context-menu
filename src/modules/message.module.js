@@ -6,7 +6,7 @@ export class CustomMessage extends Module {
     super('custom-message', 'Показать кастомное сообщение')
   }
 
-  randomMessage() {
+  #randomMessage() {
     this.letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
     this.newLetters = ''
     while (this.newLetters.length <= 10) {
@@ -25,7 +25,7 @@ export class CustomMessage extends Module {
     this.textContainer.className = 'randomTextContainer'
 
     this.randomText = document.createElement('p')
-    this.randomText.textContent = `Рандомная строка: ${this.randomMessage()}`
+    this.randomText.textContent = `Рандомная строка: ${this.#randomMessage()}`
 
     this.body = document.querySelector('body')
 
