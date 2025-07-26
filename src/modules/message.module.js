@@ -1,13 +1,23 @@
 import { Module } from '../core/module'
-import { randomMessage } from '../utils'
+import { random } from '../utils'
 
 export class CustomMessage extends Module {
   constructor() {
     super('custom-message', 'Показать кастомное сообщение')
   }
 
+  randomMessage() {
+    this.letters = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    this.newLetters = ''
+    while (this.newLetters.length <= 10) {
+      this.index = random(0, this.letters.length - 1)
+      this.newLetters += this.letters[this.index].toLocaleUpperCase()
+    }
+    return this.newLetters
+  }
+
   toHTML() {
-    return `<li data-type="${this.type}" style="color: white;cursor: pointer;">${this.text}</li>`
+    return `<li data-type="${this.type}" class="menu-item">${this.text}</li>`
   }
 
   renderMessage() {
@@ -15,7 +25,7 @@ export class CustomMessage extends Module {
     this.textContainer.className = 'randomTextContainer'
 
     this.randomText = document.createElement('p')
-    this.randomText.textContent = `Рандомная строка: ${randomMessage()}`
+    this.randomText.textContent = `Рандомная строка: ${this.randomMessage()}`
 
     this.body = document.querySelector('body')
 
