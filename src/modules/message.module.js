@@ -27,12 +27,8 @@ export class CustomMessage extends Module {
     this.randomText = document.createElement('p')
     this.randomText.textContent = `Рандомная строка: ${this.#randomMessage()}`
 
-    this.body = document.querySelector('body')
-
     this.textContainer.append(this.randomText)
-    this.body.append(this.textContainer)
-
-    return this.body
+    document.body.append(this.textContainer)
   }
 
   trigger() {
