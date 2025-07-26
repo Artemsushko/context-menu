@@ -1,7 +1,7 @@
 import './styles.css'
 
-import { RandomFigureModule } from './modules/shape.module'
+import { ShapeModule } from './modules/shape.module'
 
-const figureModule = new RandomFigureModule()
+const figureModule = new ShapeModule()
 
 contextMenu.add(figureModule)
