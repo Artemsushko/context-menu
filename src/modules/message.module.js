@@ -1,10 +1,18 @@
 import { Module } from '../core/module'
-import { randomMessage, delay } from '../utils'
+import { randomMessage } from '../utils'
 
 export class CustomMessage extends Module {
+  constructor() {
+    super('custom-message', 'Показать кастомное сообщение')
+  }
+
+  toHTML() {
+    return `<li data-type="${this.type}" style="color: white;cursor: pointer;">${this.text}</li>`
+  }
+
   renderMessage() {
     this.textContainer = document.createElement('div')
-    this.textContainer.className = 'randomTextConteiner'
+    this.textContainer.className = 'randomTextContainer'
 
     this.randomText = document.createElement('p')
     this.randomText.textContent = `Рандомная строка: ${randomMessage()}`
@@ -17,9 +25,17 @@ export class CustomMessage extends Module {
     return this.body
   }
 
-  async message() {
+  trigger() {
+    if (this.textContainer) {
+      clearTimeout(this.timerId)
+      this.textContainer.remove()
+    }
+
     this.renderMessage()
-    await delay(4000)
-    this.textContainer.remove()
+
+    this.timerId = setTimeout(() => {
+      this.textContainer.remove()
+      this.textContainer = null
+    }, 3000)
   }
 }

@@ -11,7 +11,3 @@ export function randomMessage() {
   }
   return newAbc
 }
-
-export function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
