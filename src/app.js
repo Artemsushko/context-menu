@@ -10,7 +10,7 @@ import { CountdownTimerModule } from './modules/timer.module.js';
 const contextMenu = new ContextMenu('#menu');
 const backgroundModule = new BackgroundModule();
 const figureModule = new ShapeModule();
-const clicksModule = new ClicksModule(3);
+const clicksModule = new ClicksModule();
 const randomSound = new RandomSound();
 const customMessage = new CustomMessage();
 const countDownTimerModule = new CountdownTimerModule();
